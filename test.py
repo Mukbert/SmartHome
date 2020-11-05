@@ -1,5 +1,7 @@
 import os, sys
+sys.path.insert(0, os.path.abspath("../rpi_ws281x"))
 sys.path.insert(0, os.path.abspath("../rpi_ws281x/python"))
+sys.path.insert(0, os.path.abspath("../rpi_ws281x/python/example"))
 
 #!/usr/bin/env python3
 # rpi_ws281x library strandtest example

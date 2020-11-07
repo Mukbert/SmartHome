@@ -1,5 +1,6 @@
 from rpi_ws281x import PixelStrip, Color
 from devices.steps.step import Step
+from devices.steps.util import *
 
 # number of steps
 NUMBER_OF_LEDS = [55, 42, 38, 44, 51, 40, 39, 47, 39, 33, 36, 57, 37, 39]
@@ -34,3 +35,20 @@ class Steps(list):
     def off(self):
         for step in self:
             step.off()
+
+    def rainbow(self, wait_ms=20, iterations=1):
+        """Draw rainbow that fades across all pixels at once."""
+        for j in range(256*iterations):
+            for i in range(self.strip.numPixels()):
+                self.strip.setPixelColor(i, wheel((i+j) & 255))
+            self.strip.show()
+            wait(wait_ms)
+
+    def rainbowCycle(self, wait_ms=20, iterations=5):
+        """Draw rainbow that uniformly distributes itself across all pixels."""
+        for j in range(256*iterations):
+            for i in range(self.strip.numPixels()):
+                self.strip.setPixelColor(i, wheel((int(i * 256 / self.strip.numPixels()) + j) & 255))
+            self.strip.show()
+            wait(wait_ms)
+    

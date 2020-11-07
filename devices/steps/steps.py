@@ -32,5 +32,5 @@ class Steps(list):
         return sum(NUMBER_OF_LEDS)
 
     def off(self):
-        for step in self.steps:
+        for step in self:
             step.off()

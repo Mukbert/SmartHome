@@ -3,7 +3,7 @@ from devices.steps.step import Step
 from devices.steps.util import *
 
 # number of steps
-NUMBER_OF_LEDS = [55, 42, 38, 44, 51, 40, 39, 47, 39, 33, 36, 57, 37, 39]
+NUMBER_OF_LEDS = [55, 42, 37, 44, 51, 40, 39, 47, 39, 34, 36, 47, 37, 39]
 # LED strip configuration:
 LED_COUNT = sum(NUMBER_OF_LEDS) #600        # Number of LED pixels.
 LED_PIN = 18          # GPIO pin connected to the pixels (18 uses PWM!).

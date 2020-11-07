@@ -38,8 +38,8 @@ class Steps(list):
         wait(step_ms)
 
     def color_test(self):
-        for step in self:
-            color = random_color()
+        for i, step in enumerate(self):
+            color = Color(255, 0, 0) if i % 2 == 0 else Color(0, 255, 0)
             for led in step:
                 self.strip.setPixelColor(led, color)
                 self.strip.show()

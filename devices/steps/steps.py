@@ -32,9 +32,10 @@ class Steps(list):
     def __len__(self):
         return sum(NUMBER_OF_LEDS)
 
-    def off(self, ms=0):
+    def off(self, step_ms=0, led_ms=0):
         for step in self:
-            step.off(ms)
+            step.off(led_ms)
+        wait(step_ms)
 
     def rainbow(self, wait_ms=20, iterations=1):
         """Draw rainbow that fades across all pixels at once."""

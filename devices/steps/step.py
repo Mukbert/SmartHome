@@ -9,5 +9,5 @@ class Step(list):
     def off(self, ms=0):
         for led in self:
             self.strip.setPixelColor(led, Color(0, 0, 0))
-        self.strip.show()
-        util.wait(ms)
+            self.strip.show()
+            util.wait(ms)

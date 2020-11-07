@@ -41,8 +41,8 @@ class Steps(list):
         """Draw rainbow that fades across all pixels at once."""
         for i in range(self.strip.numPixels()):
             self.strip.setPixelColor(i, wheel(i & 255))
+            self.strip.show()
             wait(wait_ms)
-        self.strip.show()
 
     def rainbowCycle(self, wait_ms=20, iterations=5):
         """Draw rainbow that uniformly distributes itself across all pixels."""

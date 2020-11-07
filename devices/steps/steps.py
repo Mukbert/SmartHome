@@ -29,7 +29,7 @@ class Steps:
             start = 0 if i == 0 else (steps[-1][-1] + 1)
             # define step 
             step = Step(self.strip, start, start + led_counter)
-            steps.append(step)
+            self.steps.append(step)
 
     def off(self):
         for step in steps:

@@ -37,6 +37,13 @@ class Steps(list):
             step.off(led_ms)
         wait(step_ms)
 
+    def color_test(self):
+        for step in self:
+            color = random_color()
+            for led in step:
+                self.strip.setPixelColor(led, color)
+                self.strip.show()
+
     def pong(self):
         self.pong_init()
 

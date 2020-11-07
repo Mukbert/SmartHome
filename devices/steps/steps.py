@@ -30,6 +30,9 @@ class Steps:
             # define step 
             step = Step(self.strip, start, start + led_counter)
             self.steps.append(step)
+    
+    def __len__(self):
+        return sum(NUMBER_OF_LEDS)
 
     def __iter__(self):
         return self.steps.__iter__()
@@ -37,6 +40,3 @@ class Steps:
     def off(self):
         for step in self.steps:
             step.off()
-    
-    def __len__(self):
-        return sum(NUMBER_OF_LEDS)

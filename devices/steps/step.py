@@ -6,6 +6,9 @@ class Step:
         self.strip = strip
         self.leds = range(start, stop)
 
+    def __iter__(self):
+        return self.leds.__iter__()
+
     def off(self, ms=0):
         for led in self.leds:
             self.strip.setPixelColor(led, Color(0, 0, 0))

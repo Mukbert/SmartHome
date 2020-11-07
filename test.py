@@ -25,16 +25,7 @@ LED_INVERT     = False   # True to invert the signal (when using NPN transistor 
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
 
-# number of steps
-NUMBER_OF_LEDS = [55, 42, 38, 44, 51, 40, 39, 47, 39, 33, 36, 57, 37, 39]
 
-# define steps
-steps = []
-for i, led_counter in enumerate(NUMBER_OF_LEDS):
-    # get last identifier
-    start = 0 if i == 0 else steps[-1][-1]
-    # define range 
-    steps.append(range(start, start + led_counter))
 
 
 def pong(strip, color=None, rainbow=True):

@@ -26,7 +26,7 @@ class Steps:
 
         for i, led_counter in enumerate(NUMBER_OF_LEDS):
             # get last led
-            start = 0 if i == 0 else (steps[-1][-1] + 1)
+            start = 0 if i == 0 else (self.steps[-1][-1] + 1)
             # define step 
             step = Step(self.strip, start, start + led_counter)
             self.steps.append(step)

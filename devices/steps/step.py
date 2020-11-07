@@ -26,7 +26,7 @@ class Step(list):
 
         self.pointer = random.randint(0, len(self))
         self.color = util.random_color()
-        self.strip.setPixelColor(self[pointer], Color(255, 0, 0))
+        self.strip.setPixelColor(self[self.pointer], Color(255, 0, 0))
         self.strip.show()
 
         self.direction = -1 if random.randint(0, 10) < 5 else 1

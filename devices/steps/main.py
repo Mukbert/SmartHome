@@ -73,32 +73,3 @@ def woosh(strip, color=None, multicolor=True, step_wait=50, led_wait=10):
         # short break after every step
         wait(step_wait)
 
-def pong(strip):
-    step = steps[0]
-    # reset
-    for led in step:
-        strip.setPixelColor(led, Color(0, 0, 0))
-
-    pointer = random.randint(0, len(steps[0]))
- 
-    led = step[pointer]
-    strip.setPixelColor(led, Color(255, 0, 0))
-    strip.show()
-
-    direction = -1 if random.randint(0, 10) < 5 else 1
-
-    while True:
-        led = step[pointer]
-        strip.setPixelColor(led, Color(0, 0, 0))
-
-        pointer += direction
-
-        led = step[pointer]
-        strip.setPixelColor(led, Color(255, 0, 0))
-
-        if pointer == 0 or pointer == len(step) - 1:
-            direction *= -1
-
-        strip.show()
-        time.sleep(0.01)
-

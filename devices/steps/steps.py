@@ -37,6 +37,20 @@ class Steps(list):
             step.off(led_ms)
         wait(step_ms)
 
+    def pong(self):
+        self.init_pong()
+        
+        while True:
+            self.pong_loop()
+
+    def pong_init(self):
+        for step in self:
+            step.pong_init()
+
+    def pong_loop(self):
+        for step in self:
+            step.pong_loop()
+
     def rainbow(self, wait_ms=20, iterations=1):
         """Draw rainbow that fades across all pixels at once."""
         for i in range(self.strip.numPixels()):

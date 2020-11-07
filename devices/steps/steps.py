@@ -28,7 +28,7 @@ class Steps:
             # get last led
             start = 0 if i == 0 else (steps[-1][-1] + 1)
             # define step 
-            step = Step(strip, start, start + led_counter)
+            step = Step(self.strip, start, start + led_counter)
             steps.append(step)
 
     def off(self):

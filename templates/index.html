@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <title>SmartHome</title>
+        
+        {% for action in actions %}
+            <form action="/steps/{{ action }}" method="POST">
+                <button>{{ action }}</button>
+            </form>
+        {% endfor %}
+    </body>
+</html>

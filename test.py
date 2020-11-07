@@ -26,7 +26,7 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
 
 # number of steps
-NUMBER_OF_LEDS = [42, 42, 42, 48, 42, 42, 42, 42, 48, 42, 42, 42, 42, 42]
+NUMBER_OF_LEDS = [55, 42, 38, 44, 51, 40, 39, 47, 39, 33, 36, 57, 37, 39]
 
 # define steps
 steps = []
@@ -88,7 +88,7 @@ def pong(strip, color=None, rainbow=True):
             pointers[i] += direction
 
             if rainbow:
-                colors[i] = (colors[i] + 1) % 0xFFFFFF
+                colors[i] = int((colors[i] + 1) % 0xFFFFFF) 
 
             # set color of next led
             pointer = pointers[i]
@@ -111,7 +111,7 @@ def woosh(strip, color=None, multicolor=True, step_wait=50, led_wait=10):
             color1, color2 = randomRGB(), randomRGB()
 
         # iterate over ever led on step
-        for i, led in step:
+        for i, led in enumerate(step):
             # compute interpolated color for led
             pixel_color = compute_color(color1, color2, i, len(step))
             # set color of led

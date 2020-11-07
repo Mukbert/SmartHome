@@ -31,7 +31,7 @@ class Step(list):
 
         self.direction = -1 if random.randint(0, 10) < 5 else 1
 
-    def pong_loop(self):
+    def pong_loop(self, ms=10):
         self.strip.setPixelColor(self[self.pointer], Color(0, 0, 0))
 
         self.pointer += self.direction
@@ -42,5 +42,5 @@ class Step(list):
             self.direction *= -1
 
         self.strip.show()
-        util.wait(10)
+        util.wait(ms)
 

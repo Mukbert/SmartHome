@@ -32,7 +32,7 @@ class Steps:
             self.steps.append(step)
 
     def off(self):
-        for step in steps:
+        for step in self.steps:
             step.off()
     
     def __len__(self):

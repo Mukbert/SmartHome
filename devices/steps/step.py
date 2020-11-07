@@ -14,12 +14,12 @@ class Step(list):
             util.wait(ms)
 
     def pong(self):
-        self.init_pong()
+        self.pong_init()
 
         while True:
             self.pong_loop()
 
-    def init_pong(self):
+    def pong_init(self):
         # reset
         for led in self:
             self.strip.setPixelColor(led, Color(0, 0, 0))

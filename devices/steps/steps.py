@@ -38,8 +38,8 @@ class Steps(list):
         wait(step_ms)
 
     def pong(self):
-        self.init_pong()
-        
+        self.pong_init()
+
         while True:
             self.pong_loop()
 

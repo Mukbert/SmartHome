@@ -1,5 +1,7 @@
 from flask import Flask, render_template
- 
+
+from devices import steps
+
 #from devices import steps
 
 app = Flask(__name__)

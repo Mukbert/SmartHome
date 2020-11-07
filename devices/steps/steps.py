@@ -31,6 +31,9 @@ class Steps:
             step = Step(self.strip, start, start + led_counter)
             self.steps.append(step)
 
+    def __iter__(self):
+        return self.steps.__iter__()
+
     def off(self):
         for step in self.steps:
             step.off()

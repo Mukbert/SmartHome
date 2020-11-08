@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template
 
 try:
     from devices import steps
@@ -14,16 +14,14 @@ except:
 app = Flask(__name__)
 
 @app.route("/")
-def index():
-    # Check the current status of lights in the room
-    
+def index():    
     return render_template('index.html', actions=steps.actions())
      
 @app.route("/<deviceName>/<action>", methods=['POST'])
 def action(deviceName, action):    
     steps.run(action)
 
-    return render_template('index.html', actions=steps.actions()), 200
+    return redirect("/")
 
  
 if __name__ == "__main__":

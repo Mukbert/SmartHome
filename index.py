@@ -1,8 +1,15 @@
 from flask import Flask, render_template
 
-from devices import steps
+try:
+    from devices import steps
+except:
+    class X:
+        def run(self, action):
+            print("Run:", action)
 
-#from devices import steps
+        def actions(self):
+            return ["Rainbow", "Pong"]
+    steps = X()
 
 app = Flask(__name__)
 

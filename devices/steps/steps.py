@@ -10,7 +10,7 @@ LED_PIN = 18          # GPIO pin connected to the pixels (18 uses PWM!).
 # LED_PIN = 10        # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
 LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
 LED_DMA = 10          # DMA channel to use for generating signal (try 10)
-LED_BRIGHTNESS = 255  # Set to 0 for darkest and 255 for brightest
+LED_BRIGHTNESS = 100  # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False    # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
@@ -44,21 +44,15 @@ class Steps(list):
                 self.strip.setPixelColor(led, color)
                 self.strip.show()
 
-    def pong(self):
-        self.pong_init()
-
-        while True:
-            self.pong_loop()
-
-    def pong_init(self):
+    def pong(self, ms=10):
         for step in self:
             step.pong_init()
 
-    def pong_loop(self, ms=10):
-        for step in self:
-            step.pong_loop(ms=0)
-        wait(ms)
-
+        while True:
+            for step in self:
+                step.pong_loop(ms=0)
+            wait(ms)
+    
     def rainbow(self, wait_ms=20, iterations=1):
         """Draw rainbow that fades across all pixels at once."""
         for i in range(self.strip.numPixels()):

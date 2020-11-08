@@ -6,4 +6,4 @@ Follow setup instructions on: https://tutorials-raspberrypi.de/raspberry-pi-ws28
 
 Setup ssh connection to github repository to access files from pi
 
-![alt text](https://https://github.com/Mukbert/SmartHome/doc/steps.jpg "Steps Image")
+![alt text](https://github.com/Mukbert/SmartHome/doc/steps.jpg "Steps Image")

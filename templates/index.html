@@ -1,13 +1,11 @@
 <html>
-    <head>
-
-    </head>
     <body>
         <title>SmartHome</title>
+        <a1 style="font-size: 60px; padding: 60px; margin: 10px;">SmartHome @ Hilde-Guard</a1>
         
         {% for action in actions %}
             <form action="/steps/{{ action }}" method="POST">
-                <button style="width:100%; height: 100px;">{{ action }}</button>
+                <button style="font-size: 40px; width:100%; height: 200px;">{{ action }}</button>
             </form>
         {% endfor %}
     </body>
